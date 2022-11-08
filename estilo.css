@@ -1,0 +1,33 @@
+* {
+  
+}
+
+body {
+  background-color: #9be5f8;
+}
+
+
+h1 {
+    font-family: Arial;
+    font-size: 30pt;
+    color: black;
+    /*text-shadow: 2px 2px 2px black;*/
+}
+
+header{
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: auto;
+  width: 530px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.500);
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.500);
+}
