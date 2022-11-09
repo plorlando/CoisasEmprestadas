@@ -43,6 +43,13 @@
         <a href="login.php"> Ir para Login </a>
       </p>
     </form>
+
+    <?php
+      include "classes.php";
+      $_u = new usuario();
+    ?>
+
+    
   </div>
 </body>
 

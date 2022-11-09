@@ -12,30 +12,33 @@
     <form method="post" action="">
       <header>
         <h1>INDEX</h1>
-        <h2>TABELA</h2>
       </header>
       
+      <!-- Side navigation -->
+      <div class="sidenav">
+        <nav>
+          <a href="emprestimo.php">Registrar um novo empréstimo</a>
+          <a href="cadastro_itens.php">Cadastro de Itens</a>
+          <a href="dados_usuario.php">Meus dados</a>
+          <a href="login.php">Logout</a> 
+        </nav>
+      </div>
       <section>
         <div>  
-          <table>
-            Tabela com a lista de itens emprestados...
-          </table>
+          
         </div>
   
         <div>
-          <nav>
-            <ul type="circle">
-              <li><a href="emprestimo.php">Registrar um novo empréstimo</a></li>
-              <li><a href="cadastro_itens.php">Cadastro de Itens</a></li>
-              <li><a href="dados_usuario.php">Meus dados</a></li>
-              <li><a href="login.php">Logout</a></li>
-            </ul>
-          </nav>
+          <!-- Page content -->
+          <div class="main">
+            <table>
+            Tabela com a lista de itens emprestados...
+          </table>
+          </div>
+
         </div>
       </section>
-  
     <?php echo '<p>PHP CODE</p>'; 
-  
     ?> 
   </body>
 </html>
