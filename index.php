@@ -24,21 +24,24 @@
         </nav>
       </div>
       <section>
-        <div>  
-          
-        </div>
-  
-        <div>
+
           <!-- Page content -->
           <div class="main">
             <table>
             Tabela com a lista de itens emprestados...
           </table>
-          </div>
 
-        </div>
       </section>
     <?php echo '<p>PHP CODE</p>'; 
+    include 'connection.php';
+    if($_con === FALSE) {
+      echo "Não foi possível conectar à base de dados" . mysql_error();
+          exit;
+      }else{
+          echo "Conexão bem sucedida";
+      }
+
+
     ?> 
   </body>
 </html>
