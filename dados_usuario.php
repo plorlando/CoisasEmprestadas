@@ -9,7 +9,7 @@
 </head>
 
 <body>      
-      <!--FORMULÁRIO DE ALTERACAO DE DADOS DE USUARIOS-->
+      <!--FORMULÁRIO DE ALTERAÇÃO DE DADOS DOS USUÁRIOS-->
       <div id="cadastro">
         <form method="post" action=""> 
           <h1>Meus Dados</h1> 

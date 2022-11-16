@@ -34,14 +34,12 @@
       </section>
     <?php echo '<p>PHP CODE</p>'; 
     include 'connection.php';
-    if($_con === FALSE) {
+    if ($_con === FALSE) {
       echo "Não foi possível conectar à base de dados" . mysql_error();
           exit;
-      }else{
+      } else {
           echo "Conexão bem sucedida";
       }
-
-
     ?> 
   </body>
 </html>

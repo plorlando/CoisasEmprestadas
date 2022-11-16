@@ -25,10 +25,8 @@
       </p>
     </form>
     <p class="link">
-
       <a href="index.php"> Voltar ao menu principal</a>
     </p>
   </div>
 </body>
-
 </html>
