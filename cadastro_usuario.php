@@ -12,7 +12,7 @@
 <body>
   <!--FORMULÁRIO DE CADASTRO de USUARIOS-->
   <div id="cadastro">
-    <form method="post" action="">
+    <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
       <h1>Cadastro</h1>
 
       <p>

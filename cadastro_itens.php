@@ -1,32 +1,38 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+    // FONTE: https://www.youtube.com/watch?v=4tBeeMcw2sM
+    // https://www.youtube.com/watch?v=wFfwt_Rbp1o&t=675s
+    
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="estilo.css" rel="stylesheet">
-  <title>Coisas Emprestadas</title>
-</head>
+session_start();
 
-<body>
-  <!--FORMULÁRIO DE CADASTRO DE ITENS-->
-  <div id="cadastro_itens">
-    <form method="post" action="">
-      <h1>Cadastro de Itens</h1>
+    include_once("connection.php");
+    $item = $_POST['cpItem'];
+    //echo "$nome_usuario - $email_usuario";
+    
+    $sql = "INSERT INTO itens (item) VALUES ('$item')";
+    $data = mysqli_query($conn, $sql);
 
-      <p>
-        <label for="cpItem">Item</label>
-        <input id="cpItem" name="cpItem" required="required" type="text" placeholder="Item" />
-      </p>
-
-      <p>
-        <input type="submit" value="Cadastrar" />
-      </p>
-    </form>
-    <p class="link">
-      <a href="index.php"> Voltar ao menu principal</a>
-    </p>
-  </div>
-</body>
-</html>
+    if (mysqli_insert_id($conn)) {
+        $_SESSION['msg'] = "<p style='color: green'>Item cadastrado com sucesso</p>";
+        header("Location: itens.php");
+    }else{
+        $_SESSION['msg'] = "<p style='color: red'>Item cadastrado com sucesso</p>";
+        header("Location: itens.php");
+    }
+    
+    // if(mysqli_affected_rows($conn) != 0){
+    //             echo "
+    //                 <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/CoisasEmprestadas/cadastro_itens.php'>
+    //                 <script type="text/javascript">
+    //                     alert("Usuario cadastrado com Sucesso.");
+    //                 </script>
+    //             ";    
+    //         }else{
+    //             echo "
+    //                 <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/CoisasEmprestadas/cadastro_itens.php'>
+    //                 <script type="text/javascript">
+    //                     alert("O Item não foi cadastrado com Sucesso.");
+    //                 </script>
+    //             ";    
+    //         }
+?>
