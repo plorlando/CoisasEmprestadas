@@ -11,7 +11,7 @@
 <body>      
       <!--FORMULÁRIO DE ALTERAÇÃO DE DADOS DOS USUÁRIOS-->
       <div id="cadastro">
-        <form method="post" action=""> 
+        <form method="post" action="dados_cadastro_usuario.php"> 
           <h1>Meus Dados</h1> 
            
           <p> 
