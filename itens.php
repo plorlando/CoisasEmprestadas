@@ -38,7 +38,7 @@ session_start();
     <?php
     include "connection.php";
     
-
+    // PAGINAÇÂO
     $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT); // recebe a página atual
 
     $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1; // defina qual pagina o usuário está

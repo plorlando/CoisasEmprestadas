@@ -12,17 +12,17 @@
 <body>
   <!--FORMULÁRIO DE CADASTRO de USUARIOS-->
   <div id="cadastro">
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
-      <h1>Cadastro</h1>
+    <form method="post"  action="registra_usuarios.php"?>
+      <h2>Cadastro de Usuário</h2>
 
       <p>
         <label for="cpNome">Nome Completo</label>
-        <input id="cpNome" name="cpNome" required="required" type="text" placeholder="nome" />
+        <input id="cpNome" name="cpNome" required="required" type="text" placeholder="digite seu nome" />
       </p>
 
       <p>
         <label for="cpEmail">E-mail</label>
-        <input id="cpEmail" name="cpEmail" required="required" type="email" placeholder="contato@htmlecsspro.com" />
+        <input id="cpEmail" name="cpEmail" required="required" type="email" placeholder="ex. nome@dominio.com.br" />
       </p>
 
       <p>
