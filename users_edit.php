@@ -2,7 +2,7 @@
 session_start();
 include_once "connection.php";
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-$result_usuario = "SELECT * FROM usuarios WHERE userId = '$id'";
+$result_usuario = "SELECT * FROM users WHERE userId = '$id'";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>
@@ -29,14 +29,19 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 
   <!--FORMULÁRIO DE EDIÇÃO de USUARIOS-->
   <div id="cadastro">
-    <form method="post"  action="proc_edita_usuarios.php"?>
-        <p>
+    <form method="post"  action="users_edit_apply.php"?>
+      <p>
         <input name="cpId" type="hidden" value="<?php echo $row_usuario['userId'] ?>"/>
       </p>
 
       <p>
+        <label for="cpUser">Usuário</label>
+        <input id="cpUser" name="cpUser" required="required" type="text" placeholder="digite seu usuário" value="<?php echo $row_usuario['user'] ?>"/>
+      </p>
+
+      <p>
         <label for="cpNome">Nome Completo</label>
-        <input id="cpNome" name="cpNome" required="required" type="text" placeholder="digite seu nome"  value="<?php echo $row_usuario['userName'] ?>"/>
+        <input id="cpNome" name="cpNome" required="required" type="text" placeholder="digite seu nome" value="<?php echo $row_usuario['userName'] ?>"/>
       </p>
 
       <p>
@@ -57,13 +62,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
         <input type="submit" value="Editar" />
       </p>
     </form>
-
-    <?php
-      include "classes.php";
-      $_u = new usuario();
-    ?>
-
-    
+   
   </div>
 </body>
 

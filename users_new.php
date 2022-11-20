@@ -12,8 +12,12 @@
 <body>
   <!--FORMULÁRIO DE CADASTRO de USUARIOS-->
   <div id="cadastro">
-    <form method="post"  action="registra_usuarios.php"?>
+    <form method="post"  action="users_apply.php"?>
       <h2>Cadastro de Usuário</h2>
+      <p>
+        <label for="cpUser">Usuário</label>
+        <input id="cpUser" name="cpUser" required="required" type="text" placeholder="digite seu usuário" />
+      </p>
 
       <p>
         <label for="cpNome">Nome Completo</label>
@@ -40,16 +44,9 @@
 
       <p class="link">
         Já tem conta?
-        <a href="login.php"> Ir para Login </a>
+        <a href="index.php"> Ir para Login </a>
       </p>
     </form>
-
-    <?php
-      include "classes.php";
-      $_u = new usuario();
-    ?>
-
-    
   </div>
 </body>
 
