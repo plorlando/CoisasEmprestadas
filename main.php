@@ -1,5 +1,7 @@
 <?php
-session_start()
+session_start();
+echo $_SESSION['user'];
+// include('login_verify.php');
 ?>
 
 <!DOCTYPE html>

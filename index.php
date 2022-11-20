@@ -22,12 +22,7 @@
             <label for="cpSenha">Senha</label>
             <input id="cpSenha" name="cpSenha" required="required" type="password" placeholder="digite sua senha"/> 
         </p>
-           
-        <p> 
-            <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-            <label for="manterlogado">Manter-me logado</label>
-        </p>
-           
+                   
         <p> 
             <input type="submit" value="Logar" /> 
         </p>
