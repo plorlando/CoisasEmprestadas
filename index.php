@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,13 +17,26 @@
     <br>
     <form method="post" action="login.php">
         <h2>Login</h2>
+
+        <?php
+        if(isset($_SESSION['not_authenticated'])):
+        ?>
+        <div class="notification is-danger">
+            <p>ERRO: Usuário ou senha inválidos.</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['not_authenticated']);
+        ?>
+
+
         <p> 
             <label for="cpUser">Usuário</label>
             <input id="cpUser" name="cpUser" required="required" type="text" placeholder="digite seu usuário"/>
         </p>
            
         <p> 
-            <label for="cpSenha">Senha</label>
+            <label for="cpSenha">Senha</label>  
             <input id="cpSenha" name="cpSenha" required="required" type="password" placeholder="digite sua senha"/> 
         </p>
                    

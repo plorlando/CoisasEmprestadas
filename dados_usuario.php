@@ -38,7 +38,7 @@
                 </tr>
             </table>
             <p class="link">  
-                <a href="index.php">Voltar ao menu principal</a>
+                <a href="main.php">Voltar ao menu principal</a>
             </p>
         </form>
     </div>

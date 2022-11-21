@@ -49,7 +49,8 @@ session_start();
     $data_itens = mysqli_query($conn, $sql_itens);
  
     while($row_item = mysqli_fetch_assoc($data_itens)) {
-        echo $row_item['itemId'] . ". " . $row_item['item'] . "<br><hr>";
+        echo $row_item['itemId'] . ". " . $row_item['item'] . "<br>";
+        echo $row_item['userId'] . " , Data do Empréstimo: " . $row_item['dataEmprestimo'] . "<br><hr>";
     }
 
     $result_pg = "SELECT COUNT(itemId) as num_result FROM itens";
@@ -82,7 +83,7 @@ session_start();
     ?>
 
     <p class="link">
-      <a href="index.php"> Voltar ao menu principal</a>
+      <a href="main.php"> Voltar ao menu principal</a>
     </p>
   </div>
 </body>

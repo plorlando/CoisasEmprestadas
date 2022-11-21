@@ -1,7 +1,5 @@
 <?php
-session_start();
-echo $_SESSION['user'];
-// include('login_verify.php');
+include "login_verify.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,16 +15,17 @@ echo $_SESSION['user'];
   <body>
     <form method="post" action="">
       <header>
-        <h1>Página Principal</h1>
+        <h2>Página Principal</h2>
+        <h4><?php echo "Olá " . $_SESSION['user'];?></h4>
       </header>
       
       <!-- Side navigation -->
       <div class="sidenav">
         <nav>
-          <a href="emprestimo.php">Registrar um novo empréstimo</a>
+          <a href="lend.php">Registrar um novo empréstimo</a>
           <a href="cadastro_itens.php">Cadastro de Itens</a>
           <a href="dados_usuario.php">Meus dados</a>
-          <a href="index.php">Logout</a> 
+          <a href="logout.php">Logout</a> 
         </nav>
       </div>
       <section>

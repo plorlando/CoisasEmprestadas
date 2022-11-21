@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'connection.php';
 
 if(empty($_POST['cpUser']) || empty($_POST['cpSenha'])) {
@@ -18,9 +19,8 @@ if($row == 1) {
     header('Location: main.php');
     exit();
 } else {
+    $_SESSION['not_authenticated'] = true;
     header('Location: index.php');
+    exit();
 }
-
-
-
 ?> 
