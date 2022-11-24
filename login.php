@@ -18,9 +18,6 @@ $now = date("d/m/Y H:i:s");
 setcookie("user", $result['userName'], time()+60*60*24);
 setcookie("last_access", $now, time()+60*60*24);
 
-
-
-
 if($row == 1) {
     $_SESSION['user'] = $user;
     header('Location: main.php');
