@@ -12,21 +12,21 @@ $currentDate = date("d/m/Y");
 ?>
 <section>
         <header>
-            <h2>Registro de Empréstimo</h2>
-            <h4><?php echo "Olá, " . $_SESSION['user'];?></h4>
-        </header>
+        <h2>Devolução de Empréstimo</h2>
+        <h4><?php echo "Olá, " . $_SESSION['user'];?></h4>
+      </header>
     
-        <form method="post" action="lend_register.php">
+        <form method="post" action="return_register.php">
             <table>
                 <h2>Insira os dados do item emprestado</h2>
 
                 <tr>
-                    <td><label for="cpItem">Item:</label></td>
+                    <td><label for="cpItem">Item</label></td>
                     <td>
                         <select id="cpItem" name="cpItem" required="required" size="">
                         <?php
                             $res = mysqli_query($conn, "SELECT itemId, item, emprestado FROM itens 
-                            WHERE emprestado = 0");
+                            WHERE emprestado = 1");
                             while($row = mysqli_fetch_assoc($res)) {
                                 echo"<option value=".$row['itemId'].">".$row['item']."</option>";
                             }
@@ -35,11 +35,11 @@ $currentDate = date("d/m/Y");
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="cpNome">Nome completo:</label></td>
+                    <td><label for="cpNome">Nome completo</label></td>
                     <td><input id="cpNome" name="cpNome" required="required" type="text" placeholder="Digite seu nome" value="<?php echo $user['userName'];?>" disabled /></td>
                 </tr>
                 <tr>
-                    <td><label for="cpData">Data de empréstimo:</label></td>
+                    <td><label for="cpData">Data de devolução</label></td>
                     <td><input type="date" name="cpData" value="<?=date("Y-m-d");?>"></td>
                 </tr>
                 
@@ -47,14 +47,17 @@ $currentDate = date("d/m/Y");
                     <input id="cpId" name="cpId" type="hidden"  value="<?php echo $user['userId'];?>" />
                 
             </table>
-            <input type="submit" value="Registrar Empréstimo"/>
+            <input type="submit" value="Registrar Devolução"/>
         </form>
         <br>
         <div class="container"></div>
         <p class="link">
             Não encontrou o que procurava? Cadastre um novo item aqui:
-            <a href="itens.php"><strong>Cadastro de Itens</strong></a><br>
+            <a href="cadastro_itens.php"><strong>Cadastro de Itens</strong></a><br>
         </p>
+        
+        <a href="dados_usuario.php">Meus dados</a><br>
+        <a href="logout.php">Logout</a>
 
 <?php
 include "bottom.php";

@@ -2,7 +2,6 @@
     // FONTE: https://www.youtube.com/watch?v=4tBeeMcw2sM
     // https://www.youtube.com/watch?v=wFfwt_Rbp1o&t=675s
     
-
     session_start();
 
     include_once("connection.php");
@@ -11,7 +10,7 @@
     $nome = filter_input(INPUT_POST, 'cpNome', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'cpEmail', FILTER_SANITIZE_STRING);
     $senha = filter_input(INPUT_POST, 'cpSenha', FILTER_SANITIZE_STRING);
-
+    
     $sql_edit_user = "UPDATE users SET
     user = '$user',
     userName = '$nome',

@@ -1,53 +1,53 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+include "connection.php";
+include "login_verify.php";
+include "top.php";
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="estilo.css" rel="stylesheet">
-  <title>Coisas Emprestadas</title>
-</head>
+date_default_timezone_set("America/Sao_Paulo");
+$currentDate = date("d/m/Y");
 
-<body>
-  <!--FORMULÁRIO DE CADASTRO de USUARIOS-->
-  <div id="cadastro">
-    <form method="post"  action="users_apply.php"?>
-      <h2>Cadastro de Usuário</h2>
-      <p>
-        <label for="cpUser">Usuário</label>
-        <input id="cpUser" name="cpUser" required="required" type="text" placeholder="digite seu usuário" />
-      </p>
-
-      <p>
-        <label for="cpNome">Nome Completo</label>
-        <input id="cpNome" name="cpNome" required="required" type="text" placeholder="digite seu nome" />
-      </p>
-
-      <p>
-        <label for="cpEmail">E-mail</label>
-        <input id="cpEmail" name="cpEmail" required="required" type="email" placeholder="ex. nome@dominio.com.br" />
-      </p>
-
-      <p>
-        <label for="cpSenha">Senha</label>
-        <input id="cpSenha" name="cpSenha" required="required" type="password" placeholder="ex. 1234" />
-      </p>
-
-      <p>
-        <label for="cpConfSenha">Redigite a Senha</label>
-        <input id="cpConfSenha" name="cpConfSenha" required="required" type="password" placeholder="ex. 1234" />
-      </p>
-      <p>
-        <input type="submit" value="Cadastrar" />
-      </p>
-
-      <p class="link">
-        Já tem conta?
-        <a href="index.php"> Ir para Login </a>
-      </p>
-    </form>
-  </div>
+?>
+<section>
+    <header>
+        <h2>Cadastro de Usuário</h2>
+    </header> 
+    
+    <div id="cadastro">
+        <form method="post" action="users_apply.php"> 
+            
+            <table>
+                <tr>
+                    <td><label for="cpUser">Usuário</label></td>
+                    <td><input id="cpUser" name="cpUser" required="required" type="text" placeholder="digite seu usuário" /></td>
+                </tr>
+                <tr>
+                    <td><label for="cpNome">Nome completo:</label></td>
+                    <td><input id="cpNome" name="cpNome" required="required" type="text" placeholder="Digite seu nome"/></td>
+                </tr>
+                <tr>
+                    <td><label for="cpEmail">E-mail:</label></td>
+                    <td><input id="cpEmail" name="cpEmail" required="required" type="email" placeholder="nome@email.com"/> </td>
+                </tr>
+                <tr>
+                    <td><label for="cpSenha">Senha:</label></td>
+                    <td><input id="cpSenha" name="cpSenha" required="required" type="password" placeholder="Ex.:1234"/></td>
+                </tr>
+                <tr>
+                    <td><label for="cpConfSenha">Confirmação de senha:</label></td>
+                    <td><input id="cpConfSenha" name="cpConfSenha" required="required" type="password" placeholder="Ex.:1234"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Cadastrar"/>
+                        <input type="reset" value="Limpar"/>
+                    </td>
+                </tr>
+            </table>
+            <p class="link">  
+                <a href="main.php">Voltar</a>
+            </p>
+        </form>
+    </div>
 </body>
-
 </html>
+    

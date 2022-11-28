@@ -8,12 +8,14 @@ session_start()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="estilo.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="estilo.css?v=<?php echo time(); ?>">
     <title>Coisas Emprestadas</title>
 </head>
 
 <body>
-    <h1>Sistema de Controle de Coisas Emprestadas</h1>
+    <header>
+        <h2>Sistema de Controle de Coisas Emprestadas</h2>
+    </header>
     <br>
     <form method="post" action="login.php">
         <h2>Login</h2>
@@ -44,10 +46,10 @@ session_start()
             <input type="submit" value="Logar" /> 
         </p>
            
-        <p class="link">
+        <!-- <p class="link">
             Ainda não tem conta?
             <a href="users_new.php">Cadastre-se</a>
-        </p>
+        </p> -->
     </form>
     
     <br>

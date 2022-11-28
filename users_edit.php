@@ -1,25 +1,22 @@
 <?php
-session_start();
-include_once "connection.php";
+include "connection.php";
+include "login_verify.php";
+include "top.php";
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $result_usuario = "SELECT * FROM users WHERE userId = '$id'";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 $row_usuario = mysqli_fetch_assoc($resultado_usuario);
+
+
+date_default_timezone_set("America/Sao_Paulo");
+$currentDate = date("d/m/Y");
+
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="estilo.css" rel="stylesheet">
-  <title>Edição de usuários</title>
-</head>
-
-<body>
-    <h2>Editar Usuário</h2>
+<section>
+    <header>
+        <h2>Editar Usuário</h2>
+        <h4><?php echo "Olá, " . $_SESSION['user'];?></h4>
+    </header>
     <?php
         if(isset($_SESSION['msg'])) {
             echo $_SESSION['msg'];

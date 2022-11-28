@@ -17,7 +17,7 @@ if ($conn->query($sql_lend) === TRUE) {
     $_SESSION['msg'] = "<p style='color: green'>Item emprestado com sucesso</p>";
     header("Location: itens.php");
 }else{
-    $_SESSION['msg'] = "<p style='color: red'>Falha ao empres o item</p>";
+    $_SESSION['msg'] = "<p style='color: red'>Falha ao emprestimo item</p>";
     header("Location: itens.php");
 }
 ?>
